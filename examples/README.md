@@ -6,7 +6,8 @@ installing anything.
 Paste them as they come out of the plugin — do not tidy them up by hand. The
 point of this folder is to show what the generator actually writes.
 
-Suggested layout, one folder per design:
+`team-cards/` is a ready-made skeleton with placeholders — paste the plugin's
+output over each file and fill in its README. One folder per design:
 
 ```
 examples/
