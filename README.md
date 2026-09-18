@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./Baton_logo_dark.png" alt="Baton">
+<img src="./Baton_logo_dark.png" alt="Baton" width="50%">
 
 # Baton
 
