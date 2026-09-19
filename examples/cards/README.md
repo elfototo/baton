@@ -3,7 +3,7 @@
 Four identical cards that the designer had split into three frames of two. Each
 card holds a photo masked by an organic shape, a name, a role and a social badge.
 
-<img src="../../docs/screnchoot_Skills.png" alt="Baton" width="200">
+<img src="../../docs/screnchoot_Skills.png" alt="Baton">
 
 **What is worth looking at in the output**
 
