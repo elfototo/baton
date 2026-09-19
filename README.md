@@ -266,8 +266,6 @@ Stated plainly, because the first sceptic will check:
 
 - [`ARCHITECTURE.md`](./ARCHITECTURE.md) — the pipeline in detail: the three node
   shapes, how a pass is written, how repeats are folded, how it is tested.
-- [`CASE-STUDIES.md`](./CASE-STUDIES.md) — three bugs worth writing down, from
-  symptom to fix.
 - [`examples/`](./examples) — real files the plugin produced, unedited.
 - [`docs/`](./docs) — screenshots and video.
 - [`CHANGELOG.md`](./CHANGELOG.md) — what changed in each release.
