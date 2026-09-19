@@ -1,33 +1,27 @@
-import { Icon2 } from "./icons";
+import { Icon1 } from "./icons";
 import { items } from "./consts";
 import type { Item } from "./types";
 
 function Card(props: Item) {
   return (
-    <div className={`relative flex flex-col items-start pr-[89px] pl-[33px] w-[280px] h-[398px] shrink-0 bg-white rounded-[12px] ${props.styles}`}>
-      <div className={`z-[1] absolute left-[50%] top-[-59px] flex flex-col items-center w-[222.38999938964844px] h-32 shrink-0 rounded-[12px] translate-x-[-50%] ${props.styles2}`}>
-        {props.icon}
-      </div>
-      <div className={`flex flex-col items-start w-[158.38999938964844px] shrink-0 ${props.styles3}`}>
+    <div className={`relative h-[528.47998046875px] shrink-0 rounded-[12px] overflow-hidden ${props.styles}`}>
+      <div className={`z-[1] absolute left-[50%] shrink-0 translate-x-[-50%] overflow-hidden ${props.styles2}`} style={{...props.style}}></div>
+      <div className={`z-[2] absolute left-[50%] flex flex-col items-start shrink-0 bg-white translate-x-[-50%] ${props.styles3}`}>
         <h1 className={`relative shrink-0 text-secondary-text font-sans text-2xl font-bold leading-8 text-left ${props.styles4} whitespace-pre-line`}>{props.title}</h1>
-        <ul className={`flex flex-col justify-between items-center w-[158.38999938964844px] shrink-0 ${props.styles5}`}>
-          {props.list.map((row, rowIndex) => (
-            <li key={rowIndex} className="flex flex-row items-center gap-[9px] w-[158.38999938964844px] h-6 shrink-0">
-              <Icon2 />
-              <span className="relative shrink-0 text-secondary-text font-sans text-base font-normal leading-5 text-left whitespace-pre-line" >{row}</span>
-            </li>
-          ))}
-        </ul>
+        <p className="relative shrink-0 text-secondary-text font-sans text-base font-normal leading-6 text-left whitespace-pre-line">{props.content}</p>
       </div>
     </div>
   );
 }
 
-export default function Skills(): JSX.Element {
+export default function Services(): JSX.Element {
   return (
-    <div className="flex flex-col justify-between items-center pt-[349px] pr-[376px] pb-[349px] pl-[376px] w-[1920px] h-[1306px] shrink-0 bg-accent-background-2">
-      <h1 className="relative shrink-0 text-tertiary-text whitespace-nowrap font-sans text-5xl font-bold leading-[48px] text-left">Skills</h1>
-      <div className="flex flex-row justify-between items-center w-[1168px] h-[398px] shrink-0">
+    <div className="flex flex-col items-center gap-[88px] pt-[127px] pr-[376px] pb-[257px] pl-[376px] w-[1920px] h-[1593px] shrink-0 bg-secondary-background">
+      <div className="flex flex-row items-center gap-[19px] pr-[2px] pb-[1px] w-[267.0783386230469px] h-12 shrink-0">
+        <Icon1 />
+        <h1 className="relative shrink-0 text-white whitespace-nowrap font-sans text-5xl font-bold leading-[48px] text-left">Services</h1>
+      </div>
+      <div className="grid grid-cols-[repeat(3,_379px)] grid-rows-[repeat(2,_528px)] gap-x-4 gap-y-4 w-[1167.9901123046875px] h-[1072.9599609375px] shrink-0">
         {items.map((item) => (
           <Card key={item.id} {...item} />
         ))}
