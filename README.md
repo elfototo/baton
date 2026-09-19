@@ -176,27 +176,6 @@ A few of the transformations that make the output readable:
   meaning — `accent-*` for brand colours, `foreground` / `muted` / `surface` /
   `border` for neutrals.
 
-### Problems that turned out to be interesting
-
-The honest part of the work was not the pipeline — it was the long tail:
-
-- **Rotation is reported in world space.** A vector rotated 45° inside a mirrored
-  group needs `rotate(45deg) scaleX(-1)` locally, not `rotate(-45deg)`. The fix
-  computes the local transform from the matrices: `parent⁻¹ · node`.
-- **A hairline is not zero.** Figma reports a horizontal line's height as
-  `1.7e-6`, not `0`. A `=== 0` check missed it, and an arrow drawn with a 3 px
-  stroke collapsed to nothing.
-- **Tailwind preflight fights you.** `img { max-width: 100% }` silently squeezed
-  photos that are deliberately wider than their mask.
-- **Paint opacity lives apart from colour alpha.** A white arrow at 40 % paint
-  opacity rendered fully white until stroke paints started folding it in.
-- **A negative auto-layout gap** is how designers overlap children. CSS has no
-  such thing, so that layout falls back to geometry.
-
-Every one of them arrived as a real design that came out wrong, was reproduced
-from a dump as a fixture, and left behind a test. Three are written up in full in
-[CASE-STUDIES.md](./CASE-STUDIES.md).
-
 ---
 
 ## Design decisions
