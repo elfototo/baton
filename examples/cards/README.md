@@ -4,7 +4,7 @@ Four identical cards that the designer had split into three frames of two. Each
 card holds a photo masked by an organic shape, a name, a role and a social badge.
 
 
-![Source frame in Figma](../../docs/screnchoot_Skills.png)
+[Source frame in Figma](../../docs/screnchoot_Skills.png)
 
 **What is worth looking at in the output**
 
