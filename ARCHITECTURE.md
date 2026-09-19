@@ -73,21 +73,10 @@ a node, decide nothing you cannot justify from geometry.
 A small one, close to the real thing:
 
 ```ts
-/**
- * Ребёнок выходит за границы родителя.
- *
- * Потоком такой ребёнок не выражается: в потоке он встаёт ВНУТРЬ родителя, и
- * вылезшая часть просто исчезает, а сиблинги уезжают на её место.
- *
- * Для GROUP это никогда не срабатывает: габарит группы и есть объединение
- * детей. То есть правило работает ровно там, где дизайнер сам вынес ребёнка за
- * рамку фрейма.
- */
+
 export function escapesParent(child: NormalizedNode, parentBox?: Rect): boolean {
   if (!hasRect(parentBox)) return false;
 
-  // ТЕКСТ не считаем никогда: текст, вылезший за свою рамку, — рядовой артефакт
-  // макета, а не приём.
   if (child.nodeType === "TEXT") return false;
 
   const tolX = Math.max(ESCAPE_TOLERANCE, parentBox.width * ESCAPE_RATIO);
